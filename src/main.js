@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Icon from 'vue-svg-icon/Icon.vue'
 
+import './container'
+
 import App from './components/App.vue'
 import router from './router'
 import store from './store'

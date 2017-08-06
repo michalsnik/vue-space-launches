@@ -1,6 +1,8 @@
 <template lang="html">
   <page>
-    <ui-header :primary="true">Launches</ui-header>
+    <ui-header :primary="true">
+      Launches
+    </ui-header>
 
     <router-link
       v-for="l in launches"
@@ -17,15 +19,12 @@
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import UiHeader from '@app/components/generic/UiHeader.vue'
-import Page from '@app/components/layouts/BasePage.vue'
-import UiCard from '@app/components/generic/UiCard.vue'
 
 export default {
   components: {
-    Page,
-    UiHeader,
-    UiCard
+    Page: 'BasePage',
+    UiCard: 'UiCard',
+    UiHeader: 'UiHeader'
   },
   computed: {
     ...mapState('launches', {

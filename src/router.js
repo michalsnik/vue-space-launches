@@ -1,14 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
-import Launches from './components/pages/Launches.vue';
-import LaunchDetails from './components/pages/LaunchDetails.vue';
+import injector from 'vue-inject'
 
 Vue.use(Router);
 
 const routes = [
-  { path: '', name: 'launches', component: Launches },
-  { path: '/launch/:launchId', name: 'launch', component: LaunchDetails, props: true },
+  { path: '', name: 'launches', component: injector.get('Launches') },
+  { path: '/launch/:launchId', name: 'launch', component: injector.get('LaunchDetails'), props: true },
   { path: '*', component: { template: '<div>404</div>' } },
 ];
 
